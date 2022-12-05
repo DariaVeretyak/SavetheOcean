@@ -1,6 +1,153 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@import "./vars";
+@import "./typography";
+
+// media //
+@mixin mobile {
+  @media (min-width: 320px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin iPad {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    @content;
+  }
+}
+
+@mixin full {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+// // width Conteiner {
+@mixin widthConteiner {
+  @include full {
+    width: 1696px;
+  }
+
+  @include onDesktop {
+    width: calc(100vw - #{2 * 71 + px});
+  }
+
+  @include tablet {
+    width: calc(100vw - #{2 * 41 + px});
+  }
+
+  @include iPad {
+    width: calc(100vw - #{2 * 32 + px});
+  }
+
+  @include mobile {
+    width: calc(100vw - #{2 * 24 + px});
+  }
+}
+
+//padding conteiner
+@mixin paddings {
+  @include onDesktop {
+    padding-left: 71px;
+    padding-right: 71px;
+  }
+
+  @include tablet {
+    padding-left: 41px;
+    padding-right: 41px;
+  }
+
+  @include iPad {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include mobile {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin backgroundImg($url) {
+  background: url($url) no-repeat center;
+  background-size: contain;
+}
+
+/* Тёмная тема */
+@mixin dark-theme {
+  .page--wrapper {
+    color: #fff;
+    background-color: $dark;
+  }
+
+  .header__menu-icon {
+    @include backgroundImg("../images/icons/lightMenu.svg");
+  }
+
+  .header__logo {
+    @include backgroundImg("../images/logo-white.svg");
+  }
+
+  .header__tel {
+    color: #fff;
+  }
+
+  .about__section-title {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+  }
+
+  .news__newBlock {
+    background-color: $grey;
+    border: 1px solid #fff;
+  }
+
+  .news__imgBlock {
+    border-bottom: 1px solid #fff;
+  }
+
+  .subscribe__conteiner {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+  }
+
+  .subscribe__label {
+    background-color: #fff;
+  }
+
+  .subscribe__btn {
+    background-color: $blue;
+
+    &:hover {
+      background-color: rgba(20, 133, 197, 1);
+    }
+  }
+
+  .footer {
+    background-color: $grey;
+  }
+
+  .footer__logo {
+    @include backgroundImg("../images/logo-white.svg");
+  }
+
+  .news::-webkit-scrollbar-thumb {
+    background-color: $blue;
   }
 }

@@ -1,0 +1,183 @@
+.footer {
+  background-color: $dark;
+  width: 100%;
+
+  &__conteiner {
+    display: flex;
+    flex-direction: column;
+    @include widthConteiner;
+    @include paddings;
+    padding-top: 56px;
+    padding-bottom: 70px;
+    gap: 67px;
+
+    @include full {
+      margin: 0 auto;
+    }
+
+    @include tablet {
+      padding-top: 60px;
+      padding-bottom: 80px;
+    }
+
+    @include iPad {
+      gap: 53px;
+    }
+
+    @include mobile {
+      gap: 47px;
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 62px;
+
+    @include full {
+      flex-direction: row;
+      gap: 28px;
+    }
+
+    @include iPad {
+      gap: 56px;
+    }
+
+    @include mobile {
+      gap: 47px;
+    }
+  }
+
+  &__logo {
+    background: url("../images/logo-white.svg") no-repeat center;
+    background-size: contain;
+    height: 37px;
+    width: 388px;
+
+    @include mobile {
+      height: 25px;
+      width: 259px;
+    }
+  }
+
+  &__socialBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+  }
+
+  &__socialLinks {
+    display: flex;
+    gap: 24px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  &__blockTitle {
+    color: #fff;
+  }
+
+  &__contactsBlock {
+    @include flex-column;
+    gap: 19px;
+  }
+
+  &__contacts {
+    display: flex;
+    gap: 42px;
+
+    @include iPad {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: 34px;
+    }
+  }
+
+  &__contact-col {
+    @include flex-column;
+    gap: 8px;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 34px;
+    height: 48px;
+    width: 196px;
+    background-color: #fff;
+    @include btnText;
+    color: $dark;
+    font-size: 16px;
+        transition: all 0.3s ease;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 34px;
+      content: '';
+      width: 24px;
+      height: 24px;
+      transform: translate(-50%, -50%);
+    }
+
+    &--facebook {
+      &::before {
+        content: url("../images/icons/facebook.svg");
+      }
+    }
+
+    &--instagram {
+      &::before {
+        content: url("../images/icons/instagram.svg");
+      }
+    }
+
+    &--telegram {
+      &::before {
+        content: url("../images/icons/telegram.svg");
+      }
+    }
+
+    &:hover {
+      background-color: $blue;
+    }
+  }
+
+  &__contact-info {
+    color: #fff;
+    font-family: "Syncopate", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  &__comment {
+    font-family: "Syncopate", sans-serif;
+    color: rgba(190, 190, 190, 1);
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+
+  &__decor {
+    position: relative;
+    width: 100%;
+    height: 57px;
+    background-color: #1a1a1a;
+  }
+}

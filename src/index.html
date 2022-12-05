@@ -3,11 +3,280 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="./styles/main.scss">
+    <title>SavetheOcean</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./images/favicon.svg"
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.scss">
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
-    <script type="text/javascript" src="scripts/main.js"></script>
+  <body class="page__body">
+    <div class="page__wrapper">
+      <header class="header" id="header">
+        <a class="header__logo" href="#home-page"></a>
+        <div class="header__actions">
+          <div class="header__contacts">
+            <a href="tel:+380931232323" class="header__tel">
+              +38 (093 ) 123-23-23
+            </a>
+            <p class="header__timeWork">Mo-Fri 9:00-18:00</p>
+          </div>
+          <button class="header__changeThema header__changeThema--header" type="button"></button>
+          <button class="header__menu-icon" type="button"></button>
+        </div>
+        <div class="menu menu-page">
+          <div class="menu__close"></div>
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a href="#about" class="menu__link">About us</a>
+            </li>
+            <li class="menu__item">
+              <a href="#projects" class="menu__link">Our Projects</a>
+            </li>
+            <li class="menu__item">
+              <a href="#stories" class="menu__link">stories</a>
+            </li>
+            <li class="menu__item">
+              <a href="#join" class="menu__link">join the team</a>
+            </li>
+          </ul>
+          <div class="menu__contactsBlock">
+            <button class="header__changeThema header__changeThema--menu" type="button"></button>
+            <h2 class="menu__title">contact us</h2>
+            <div class="menu__contacts">
+              <div class="menu__contact-col">
+                <a
+                  class="menu__contact-info"
+                  href="tel: +380931232323"
+                >
+                  +38( 093 ) 123-23-23
+                </a>
+                <p class="menu__comment">Mo-Fri 9:00-18:00</p>
+              </div>
+              <div class="menu__contact-col">
+                <a
+                  class="menu__contact-info"
+                  href="mailto: savetheocean@.org"
+                  target="_blank"
+                >
+                  savetheocean@.org
+                </a>
+                <p class="menu__comment">for projects and questions</p>
+              </div>
+              <div class="menu__contact-col">
+                <a
+                  class="menu__contact-info"
+                  href="mailto: hrsavetheocean@.org"
+                  target="_blank"
+                >
+                  hrsavetheocean@.org
+                </a>
+                <p class="menu__comment">for jobs</p>
+              </div>
+            </div>
+            <div class="menu__socialLinks">
+              <a
+                href="https://www.facebook.com/"
+                class="menu__socialLink menu__socialLink--facebook"
+                target="_blank"
+              >
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                class="menu__socialLink menu__socialLink--instagram"
+                target="_blank"
+              >
+              </a>
+              <a
+                href="https://t.me/SavetheOcean"
+                class="menu__socialLink menu__socialLink--telegram"
+                target="_blank"
+              >
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page__content">
+        <section class="about page__section" id="about">
+          <div class="about__infoBlock">
+            <h1 class="about__title">
+              About the
+              <br>
+              <span class="about__title--span">poject</span>
+            </h1>
+            <div class="about__sections">
+              <div class="about__section">
+                <button class="about__section-title about__section-title--active">
+                  A nice place for powerful slogan
+                </button>
+                <p class="about__section-info about__section-info--active">
+                  The purpose of lorem ipsum is to create a natural looking block of text
+                  (sentence, paragraph, page, etc.) that doesn't distract from the layout.
+                  A practice not without controversy, laying out pages with meaningless
+                  filler text can be very useful when the focus is meant to be on design,
+                  not content.
+                </p>
+              </div>
+              <div class="about__section about__section--projects" id="projects">
+                <button class="about__section-title">our projects</button>
+                <p class="about__section-info">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Aliquam, ipsam minima quam obcaecati id libero voluptate,
+                  blanditiis velit accusantium dicta recusandae perferendis
+                  culpa atque amet, labore nisi eos provident ratione.
+                </p>
+              </div>
+              <div class="about__section about__section--stories" id="stories">
+                <button class="about__section-title">our stories</button>
+                <p class="about__section-info">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Eveniet voluptatibus libero suscipit esse vero rem est
+                  consectetur culpa amet autem, reprehenderit tempora.
+                  Debitis nesciunt animi, illum sapiente rem voluptates molestias!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper mySwipper">
+            <div class="swiper__wrapper">
+              <img
+                class="swiper__slide"
+                src="./images/slider1.png"
+                alt="slide1"
+              >
+              <img
+                class="swiper__slide"
+                src="./images/slider2.png"
+                alt="slide2"
+              >
+              <img
+                class="swiper__slide"
+                src="./images/slider3.png"
+                alt="slide3"
+              >
+            </div>
+            <div class="swiper__action">
+              <button
+                type="button"
+                class="swiper__control swiper__control--prev"
+                disabled
+              >
+              </button>
+              <div class="swiper__pagination-block">
+                <p class="swiper__pagination">1</p>
+                <span class="swiper__pagination swiper__pagination--all">
+                  &nbsp;&frasl; 3
+                </span>
+              </div>
+              <button type="button" class="swiper__control swiper__control--next"></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="news page__section">
+          <h2 class="news__title page__title">
+            Latest News
+          </h2>
+          <div class="news__content"></div>
+        </section>
+
+        <section class="subscribe" id="subscribe">
+          <div class="subscribe__conteiner page__section">
+            <h2 class="subscribe__title page__title">
+              Subscribe to receive reports and breaking news from save the ocean team
+            </h2>
+            <form class="subscribe__form" action="#">
+              <label class="subscribe__label" for="subscribe-email">
+                <input
+                  id="subscribe-email"
+                  class="subscribe__input"
+                  type="email"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                  placeholder="Email"
+                  required
+                >
+              </label>
+              <button class="subscribe__btn" type="submit">Send</button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__conteiner">
+          <a class="footer__logo" href="#home-page"></a>
+          <div class="footer__actions">
+            <div class="footer__socialBlock">
+              <h2 class="footer__blockTitle page__title">Subscribe to OUR SOCIAL MEDIA</h2>
+              <div class="footer__socialLinks">
+                <a
+                  href="https://www.facebook.com/"
+                  class="footer__link footer__link--facebook"
+                  target="_blank"
+                >
+                  Facebook
+                </a>
+                <a
+                  href="https://www.instagram.com/"
+                  class="footer__link footer__link--instagram"
+                  target="_blank"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="https://t.me/SavetheOcean"
+                  class="footer__link footer__link--telegram"
+                  target="_blank"
+                >
+                  Telegram
+                </a>
+              </div>
+            </div>
+            <div class="footer__contactsBlock">
+              <h2 class="footer__blockTitle page__title">do not hesitate to contact us</h2>
+              <div class="footer__contacts" id="join">
+                <div class="footer__contact-col">
+                  <a
+                    class="footer__contact-info"
+                    href="tel: +380931232323"
+                  >
+                    +38( 093 ) 123-23-23
+                  </a>
+                  <p class="footer__comment">Mo-Fri 9:00-18:00</p>
+                </div>
+                <div class="footer__contact-col">
+                  <a
+                    class="footer__contact-info"
+                    href="mailto: savetheocean@.org"
+                    target="_blank"
+                  >
+                    savetheocean@.org
+                  </a>
+                  <p class="footer__comment">for projects and questions</p>
+                </div>
+                <div class="footer__contact-col">
+                  <a
+                    class="footer__contact-info"
+                    href="mailto: hrsavetheocean@.org"
+                    target="_blank"
+                  >
+                    hrsavetheocean@.org
+                  </a>
+                  <p class="footer__comment">for jobs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__decor"></div>
+      </footer>
+    </div>
+    <script type="text/javascript" src="./scripts/main.js"></script>
   </body>
 </html>

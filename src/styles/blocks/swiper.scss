@@ -1,0 +1,160 @@
+.swiper {
+  position: relative;
+  height: 723px;
+  width: 1262px;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  @include onDesktop {
+    height: 522px;
+    width: 912px;
+  }
+
+  @include tablet {
+    height: 491px;
+    width: 704px;
+  }
+
+  @include iPad {
+    height: 419px;
+    width: 704px;
+    align-self: center;
+  }
+
+  @media (min-width: 451px) and (max-width: 767px) {
+    height: 350px;
+    width: 402px;
+    align-self: center;
+  }
+
+  @media (min-width: 360px) and (max-width: 450px) {
+    height: 200px;
+    width: 328px;
+    align-self: center;
+  }
+
+  @media (max-width: 359px) {
+    height: 200px;
+    width: 288px;
+    align-self: center;
+  }
+
+  &__wrapper {
+    display: flex;
+    height: 100%;
+  }
+
+  &__slide {
+    height: 723px;
+    width: 1262px;
+    // height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.3s ease;
+
+    @include onDesktop {
+      height: 522px;
+      width: 912px;
+    }
+
+    @include tablet {
+      height: 491px;
+      width: 704px;
+    }
+
+    @include iPad {
+      height: 419px;
+      width: 704px;
+    }
+
+    @media (min-width: 451px) and (max-width: 767px) {
+      height: 350px;
+      width: 402px;
+      align-self: center;
+    }
+
+    @media (min-width: 360px) and (max-width: 450px) {
+      height: 200px;
+      width: 328px;
+      align-self: center;
+    }
+  
+    @media (max-width: 359px) {
+      height: 200px;
+      width: 288px;
+      align-self: center;
+    }
+  }
+
+  &__action {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    display: flex;
+    gap: 24px;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      bottom: 28px;
+      left: 25px;
+      gap: 16px;
+    }
+
+    @include mobile {
+      bottom: 15px;
+      left: 17px;
+      gap: 16px;
+    }
+  }
+
+  &__control {
+    height: 41px;
+    width: 47px;
+    @include backgroundImg("../images/icons/arrow.svg");
+    border: none;
+    transition: all 0.3s ease;
+
+    &--prev {
+      transform: rotate(180deg);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+    }
+
+    &:hover {
+      @include backgroundImg("../images/icons/arrowHover.svg");
+    }
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      width: 32px;
+      height: 28px;
+    }
+
+    @include mobile {
+      width: 24px;
+      height: 21px;
+    }
+  }
+
+  &__pagination-block {
+    display: flex;
+    align-items: center;
+  }
+
+  &__pagination {
+    @include h2;
+    color: #fff;
+  
+    &--all {
+      font-weight: 400;
+    }
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      font-size: 24px;
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+}

@@ -1,0 +1,122 @@
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li {
+  margin: 0;
+}
+
+.page {
+  scroll-behavior: smooth;
+  transition-duration: 0.3s;
+
+  &__body {
+    width: 100%;
+    font-family: "KyivType Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 104%;
+    font-style: normal;
+    color: $dark;
+    background-color: #fff;
+
+    @include mobile {
+      font-size: 14px;
+    }
+
+    &--dark {
+      background-color: $dark;
+      color: #fff;
+      @include dark-theme;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    @include flex-column;
+    align-items: center;
+    min-height: 100vh;
+    max-height: max-content;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    flex: 1 1 auto;
+
+    &--background {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(217, 217, 217, 0.3);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        z-index: 10;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+  }
+
+  &__section {
+    margin: 88px auto 0;
+    box-sizing: border-box;
+    @include widthConteiner;
+
+    @include tablet {
+      margin: 94px auto 0;
+    }
+
+    @include iPad {
+      margin: 55px auto 0;
+    }
+
+    @include mobile {
+      margin: 56px auto 0;
+    }
+  }
+
+  &__title {
+    @include h2;
+  }
+
+  &__no-scroll {
+    overflow: hidden;
+  }
+}
+
+// параметри для скрол //
+::-webkit-scrollbar {
+  height: 16px;
+  background-color: rgba(239, 239, 239, 1);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $dark;
+}

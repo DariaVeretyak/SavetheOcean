@@ -1,0 +1,33 @@
+.menu-page {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &--active {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40vw;
+    box-sizing: border-box;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 20;
+    opacity: 1;
+
+    @include iPad {
+      width: 60vw;
+    }
+
+    @media (min-width: 375px) and (max-width: 767px) {
+      width: 80vw;
+    }
+
+    @media (max-width: 374px) {
+      width: 90vw;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include widthConteiner;
+  margin: 0 auto;
+  padding-top: 39px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(16, 16, 16, 1);
+
+  @include mobile {
+    padding-top: 27px;
+    padding-bottom: 15px;
+  }
+
+  &__logo {
+    @include backgroundImg("../images/logo.svg");
+    height: 37px;
+    width: 388px;
+
+    @include mobile {
+      height: 21px;
+      width: 216px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+  }
+
+  &__contacts {
+    @include flex-column;
+    gap: 11px;
+
+    @include iPad {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__tel {
+    color: $dark;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  &__timeWork {
+    color: rgba(190, 190, 190, 1);
+    font-size: 13px;
+  }
+
+  &__changeThema {
+    @include backgroundImg("../images/icons/lightThema.svg");
+    height: 32px;
+    width: 32px;
+    border: none;
+
+    &--dark {
+      @include backgroundImg("../images/icons/darkThema.svg");
+    }
+
+    &--header {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &--menu {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
+  }
+
+  &__menu-icon {
+    display: block;
+    width: 48px;
+    height: 48px;
+    @include backgroundImg("../images/icons/menu.svg");
+    border: none;
+
+    @include mobile {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

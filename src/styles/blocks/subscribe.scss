@@ -1,0 +1,139 @@
+.subscribe {
+  width: 100%;
+  margin: 78px auto 122px;
+
+  @include onDesktop {
+    margin: 80px auto 120px;
+  }
+
+  @include tablet {
+    margin: 60px auto 120px;
+  }
+
+  @include iPad {
+    margin: 70px auto 120px;
+  }
+
+  @include mobile {
+    margin: 72px auto 120px;
+  }
+
+  &__conteiner {
+    @include flex-column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    @include widthConteiner;
+    @include paddings;
+    border-top: 1px solid $dark;
+    border-bottom: 1px solid $dark;
+    padding-top: 88px;
+    padding-bottom: 88px;
+
+    @include tablet {
+      padding-top: 94px;
+      padding-bottom: 94px;
+    }
+
+    @include iPad {
+      padding-top: 55px;
+      padding-bottom: 55px;
+    }
+
+    @include mobile {
+      padding-top: 56px;
+      padding-bottom: 56px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    display: inline-block;
+    max-width: 1109px;
+
+    @include tablet {
+      max-width: 100%;
+    }
+
+    @include iPad {
+      max-width: 592px;
+    }
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+
+  &__form {
+    display: flex;
+    height: 48px;
+
+    @include mobile {
+      flex-direction: column;
+      height: max-content;
+      gap: 16px;
+    }
+  }
+
+  &__label {
+    height: 100%;
+    box-sizing: border-box;
+    padding: 12px 205px 12px 24px;
+    border: 1px solid #c6c6c6;
+
+    @include tablet {
+      padding: 13px 66px 13px 18px;
+    }
+
+    @include iPad {
+      padding: 13px 66px 13px 18px;
+    }
+
+    @include mobile {
+      padding: 13px 24px;
+      width: 100%;
+    }
+  }
+
+  &__input {
+    background-color: transparent;
+    font-size: 18px;
+    line-height: 137%;
+    height: min-content;
+    width: 352px;
+    border: none;
+    outline: none;
+
+    @include iPad {
+      width: 330px;
+    }
+
+    @include mobile {
+      width: min-content;
+    }
+  }
+
+  &__btn {
+    height: 100%;
+    width: 251px;
+    background-color: $dark;
+    border: none;
+    color: #fff;
+    @include btnText;
+    font-size: 18px;
+
+    @media (max-width: 1279px) {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      width: 100%;
+      padding-top: 14px;
+      padding-bottom: 12px;
+    }
+
+    &:hover {
+      background-color: $blue;
+    }
+  }
+}

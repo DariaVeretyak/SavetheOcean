@@ -1,0 +1,158 @@
+.menu {
+  padding: 86px 56px 32px;
+
+  @include onDesktop {
+    padding: 45px 40px 24px;
+  }
+
+  @include tablet {
+    padding: 50px 32px 24px;
+  }
+
+  @include iPad {
+    padding: 50px 50px 24px;
+  }
+
+  @include mobile {
+    padding: 50px 32px 28px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    height: 24px;
+    width: 24px;
+    @include backgroundImg("../images/icons/close.svg");
+    overflow: hidden;
+    cursor: pointer;
+
+    @media (max-width: 1279px) {
+      height: 16px;
+      width: 16px;
+      top: 16px;
+      right: 16px;
+    }
+  }
+
+  &__list {
+    @include flex-column;
+    width: 100%;
+    gap: 48px;
+
+    @include onDesktop {
+      gap: 40px;
+    }
+
+    @include tablet {
+      gap: 39px;
+    }
+
+    @include iPad {
+      gap: 39px;
+    }
+
+    @include mobile {
+      gap: 32px;
+    }
+  }
+
+  &__link {
+    font-family: "Syncopate", sans-serif;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: $dark;
+    font-weight: 700;
+
+    @include tablet {
+      font-size: 32px;
+    }
+
+    @include iPad {
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: 20px;
+    }
+
+    &:hover {
+      text-shadow: rgba(36, 169, 244, 1) -2px 2px;
+      transition-duration: 0.3s;
+    }
+  }
+
+  &__contactsBlock {
+    @include flex-column;
+    gap: 31px;
+  }
+
+  &__title {
+    @include h2;
+  }
+
+  &__contacts {
+    @include flex-column;
+    gap: 24px;
+  }
+
+  &__contact-col {
+    @include flex-column;
+    gap: 8px;
+  }
+
+  &__contact-info {
+    color: $dark;
+    font-weight: 700;
+    font-family: "Syncopate", sans-serif;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  &__comment {
+    font-family: "Syncopate", sans-serif;
+    color: rgba(190, 190, 190, 1);
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+
+  &__socialLinks {
+    display: flex;
+    gap: 32px;
+    padding-top: 12px;
+  }
+
+  &__socialLink {
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+
+    &--facebook {
+      @include backgroundImg("../images/icons/facebook.svg");
+    }
+
+    &--instagram {
+      @include backgroundImg("../images/icons/instagram.svg");
+    }
+
+    &--telegram {
+      @include backgroundImg("../images/icons/telegram.svg");
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+svg {
+  &:hover {
+    fill: $blue;
+  }
+}
