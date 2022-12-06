@@ -107,6 +107,10 @@
     color: #fff;
   }
 
+  .header__changeThema {
+    @include backgroundImg("../images/icons/darkThema.svg");
+  }
+
   .about__section-title {
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
@@ -142,12 +146,63 @@
   .footer {
     background-color: $grey;
   }
+}
 
-  .footer__logo {
-    @include backgroundImg("../images/logo-white.svg");
+@mixin light-theme {
+  .page--wrapper {
+    color: $dark;
+    background-color: #fff;
   }
 
-  .news::-webkit-scrollbar-thumb {
-    background-color: $blue;
+  .header__menu-icon {
+    @include backgroundImg("../images/icons/menu.svg");
+  }
+
+  .header__logo {
+    @include backgroundImg("../images/logo.svg");
+  }
+
+  .header__tel {
+    color: $dark;
+  }
+
+  .header__changeThema {
+    @include backgroundImg("../images/icons/lightThema.svg");
+  }
+
+  .about__section-title {
+    border-top: 1px solid #101010;
+    border-bottom: 1px solid #101010;
+    color: $dark;
+  }
+
+  .news__newBlock {
+    background-color: #fff;
+    border: 1px solid $dark;
+  }
+
+  .news__imgBlock {
+    border-bottom: 1px solid $dark;
+  }
+
+  .subscribe__conteiner {
+    border-top: 1px solid $dark;
+    border-bottom: 1px solid $dark;
+  }
+
+  .subscribe__label {
+    background-color: transparent;
+  }
+
+  .subscribe__btn {
+    background-color: $dark;
+
+    &:hover {
+      background-color: $blue;
+    }
+  }
+
+  .footer {
+    background-color: $dark;
   }
 }
