@@ -17,7 +17,12 @@
   <body class="page__body">
     <div class="page__wrapper">
       <header class="header" id="header">
-        <a class="header__logo" href="#home-page"></a>
+        <a
+          class="header__logo"
+          href="#home-page"
+          aria-label="back to home page, logo"
+        >
+        </a>
         <div class="header__actions">
           <div class="header__contacts">
             <a href="tel:+380931232323" class="header__tel">
@@ -25,8 +30,18 @@
             </a>
             <p class="header__timeWork">Mo-Fri 9:00-18:00</p>
           </div>
-          <button class="header__changeThema header__changeThema--header" type="button"></button>
-          <button class="header__menu-icon" type="button"></button>
+          <button
+            class="header__changeThema header__changeThema--header"
+            type="button"
+            aria-label="change theme"
+          >
+          </button>
+          <button
+            class="header__menu-icon"
+            type="button"
+            aria-label="menu button"
+          >
+          </button>
         </div>
         <div class="menu menu-page">
           <div class="menu__close"></div>
@@ -147,17 +162,17 @@
             <div class="swiper__wrapper">
               <img
                 class="swiper__slide"
-                src="./images/slider1.png"
+                src="./images/slider1.webp"
                 alt="slide1"
               >
               <img
                 class="swiper__slide"
-                src="./images/slider2.png"
+                src="./images/slider2.webp"
                 alt="slide2"
               >
               <img
                 class="swiper__slide"
-                src="./images/slider3.png"
+                src="./images/slider3.webp"
                 alt="slide3"
               >
             </div>
@@ -165,6 +180,7 @@
               <button
                 type="button"
                 class="swiper__control swiper__control--prev"
+                aria-label="previous slide"
                 disabled
               >
               </button>
@@ -174,7 +190,12 @@
                   &nbsp;&frasl; 3
                 </span>
               </div>
-              <button type="button" class="swiper__control swiper__control--next"></button>
+              <button
+                type="button"
+                class="swiper__control swiper__control--next"
+                aria-label="next slide"
+              >
+              </button>
             </div>
           </div>
         </section>
@@ -210,7 +231,12 @@
 
       <footer class="footer">
         <div class="footer__conteiner">
-          <a class="footer__logo" href="#home-page"></a>
+          <a
+            class="footer__logo"
+            href="#home-page"
+            aria-label="back to home page, logo"
+          >
+          </a>
           <div class="footer__actions">
             <div class="footer__socialBlock">
               <h2 class="footer__blockTitle page__title">Subscribe to OUR SOCIAL MEDIA</h2>
