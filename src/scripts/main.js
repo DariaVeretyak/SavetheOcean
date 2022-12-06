@@ -28,13 +28,55 @@ sectionTitles.forEach(title => {
 });
 
 // change thema //
-const changeThema = document.querySelectorAll('.header__changeThema');
-changeThema.forEach(btn => {
+// отримуємо збережену тему //
+const saveUserTheme = localStorage.getItem('user-theme');
+let userTheme;
+
+if(window.matchMedia) {
+  userTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+};
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  !saveUserTheme ? changeTheme() : null;
+});
+
+const changeThemaBtn = document.querySelectorAll('.header__changeThema');
+
+changeThemaBtn.forEach(btn => {
   btn.addEventListener('click', (ev) => {
+    changeTheme(true);
     ev.target.classList.toggle('header__changeThema--dark');
-    bodyPage.classList.toggle('page__body--dark')
+    // bodyPage.classList.toggle('page__body--dark')
   });
 });
+
+// Функція додавання класу теми
+function setThemeClass() {
+  if (saveUserTheme) {
+    bodyPage.classList.add(saveUserTheme)
+  } else {
+    bodyPage.classList.add(userTheme);
+  }
+}
+
+// Додаємо клас теми
+setThemeClass();
+
+// Функція зміни теми
+function changeTheme(saveTheme = false) {
+  let currentTheme = bodyPage.classList.contains('light') ? 'light' : 'dark';
+  let newTheme;
+
+  if (currentTheme === 'light') {
+    newTheme = 'dark';
+  } else if (currentTheme === 'dark') {
+    newTheme = 'light';
+  }
+
+  bodyPage.classList.remove(currentTheme);
+  bodyPage.classList.toggle(newTheme);
+  saveTheme ? localStorage.setItem('user-theme', newTheme) : null;
+}
 
 // menu //
 const menuIcon = document.querySelector('.header__menu-icon');
@@ -65,13 +107,20 @@ const slider = document.querySelector('.swiper');
 
 let sliderCounter = 1;
 
-let sliderWidth = slider.offsetWidth;
+let sliderWidth = 0;
 
 const slidersAll = 3;
 
-let disabledPoint = sliderWidth * (slidersAll - 1) * -1;
+let disabledPoint = 0;
 
 let offsetSlider = 0;
+
+function calcSliderWidth() {
+  sliderWidth = slider.offsetWidth;
+  disabledPoint = sliderWidth * (slidersAll - 1) * -1;
+};
+
+calcSliderWidth();
 
 const setDisabled = function() {
   if (offsetSlider === 0) {
@@ -81,7 +130,7 @@ const setDisabled = function() {
   } else {
     sliderPrev.removeAttribute('disabled');
     sliderNext.removeAttribute('disabled');
-  }
+  };
 };
 
 const setCount = function() {
@@ -89,6 +138,7 @@ const setCount = function() {
 };
 
 sliderPrev.addEventListener('click', (ev) => {
+  calcSliderWidth();
   sliderImages.style.transform = `translateX(${offsetSlider + sliderWidth}px)`;
   offsetSlider += sliderWidth;
   sliderCounter--;
@@ -97,6 +147,7 @@ sliderPrev.addEventListener('click', (ev) => {
 });
 
 sliderNext.addEventListener('click', (ev) => {
+  calcSliderWidth();
   sliderImages.style.transform = `translateX(${offsetSlider - sliderWidth}px)`;
   offsetSlider -= sliderWidth;
   sliderCounter++;
