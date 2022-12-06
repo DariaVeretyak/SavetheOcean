@@ -14,7 +14,6 @@
   }
 
   &__logo {
-    @include backgroundImg("../images/logo.svg");
     height: 37px;
     width: 388px;
 
@@ -44,7 +43,6 @@
   }
 
   &__tel {
-    color: $dark;
     transition: all 0.3s ease;
 
     &:hover {
@@ -58,14 +56,9 @@
   }
 
   &__changeThema {
-    @include backgroundImg("../images/icons/lightThema.svg");
     height: 32px;
     width: 32px;
     border: none;
-
-    &--dark {
-      @include backgroundImg("../images/icons/darkThema.svg");
-    }
 
     &--header {
       @include mobile {
@@ -86,7 +79,6 @@
     display: block;
     width: 48px;
     height: 48px;
-    @include backgroundImg("../images/icons/menu.svg");
     border: none;
 
     @include mobile {
