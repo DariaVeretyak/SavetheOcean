@@ -39,17 +39,9 @@ li {
     font-size: 16px;
     line-height: 104%;
     font-style: normal;
-    color: $dark;
-    background-color: #fff;
 
     @include mobile {
       font-size: 14px;
-    }
-
-    &--dark {
-      background-color: $dark;
-      color: #fff;
-      @include dark-theme;
     }
   }
 
@@ -119,4 +111,20 @@ li {
 
 ::-webkit-scrollbar-thumb {
   background-color: $dark;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $blue;
+}
+
+.dark {
+  background-color: $dark;
+  color: #fff;
+  @include dark-theme;
+}
+
+.light {
+  color: $dark;
+  background-color: #fff;
+  @include light-theme;
 }
