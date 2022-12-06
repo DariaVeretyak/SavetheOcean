@@ -1,5 +1,4 @@
 .footer {
-  background-color: $dark;
   width: 100%;
 
   &__conteiner {
@@ -51,7 +50,7 @@
   }
 
   &__logo {
-    background: url("../images/logo-white.svg") no-repeat center;
+    @include backgroundImg("../images/logo-white.svg");
     background-size: contain;
     height: 37px;
     width: 388px;
